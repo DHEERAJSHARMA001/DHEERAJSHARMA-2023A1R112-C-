@@ -1,0 +1,333 @@
+1. Object
+Definition:
+An object is an instance of a class that represents a real-world entity. 
+It contains attributes (data members) and behaviors (functions) that define its properties and actions.
+Objects store values individually but share the structure defined by the class.
+
+For example, if Car is a class, then car1 and car2 are objects with unique values like brand, color, and speed
+but follow the same blueprint.
+
+Characteristics:
+Encapsulation: Objects bundle data and functions together.
+Identity: Each object is unique in memory, even if they have identical values.
+State and Behavior: Objects have state (attributes) and behavior (methods).
+Interaction: Objects interact through function calls to share data.
+Memory Allocation: Each object gets its own memory when created.
+
+Use:
+Objects make programs modular and realistic. They allow data hiding, reusability, and better structure in 
+applications.
+
+For example, in a banking system, an Account object stores customer details, balance, and transactions. 
+Similarly, a Student object in an education system holds name, ID, and marks.
+Thus, objects simplify programming by grouping relevant data and actions together.
+
+Example 1: Car Object
+#include <iostream>
+using namespace std;
+
+class Car {
+public:
+    string brand;
+    int speed;
+    
+    void show() {
+        cout << "Brand: " << brand << ", Speed: " << speed << " km/h" << endl;
+    }
+};
+
+int main() {
+    Car car1, car2;
+    car1.brand = "Toyota";
+    car1.speed = 180;
+    
+    car2.brand = "Ford";
+    car2.speed = 200;
+
+    car1.show();
+    car2.show();
+
+    return 0;
+}
+
+Example 2: Student Object
+class Student {
+public:
+    string name;
+    int age;
+};
+
+int main() {
+    Student s1, s2;
+    s1.name = "Alice";
+    s1.age = 20;
+
+    s2.name = "Bob";
+    s2.age = 22;
+
+    cout << s1.name << " is " << s1.age << " years old.\n";
+    cout << s2.name << " is " << s2.age << " years old.\n";
+    return 0;
+}
+
+Example 3: Bank Account Object
+class BankAccount {
+public:
+    string accountHolder;
+    double balance;
+};
+
+int main() {
+    BankAccount acc1 = {"John Doe", 5000.75};
+    BankAccount acc2 = {"Jane Smith", 3000.50};
+
+    cout << acc1.accountHolder << " has $" << acc1.balance << " in account.\n";
+    cout << acc2.accountHolder << " has $" << acc2.balance << " in account.\n";
+    return 0;
+}
+
+2. Class
+Definition:
+A class is a user-defined blueprint for creating objects.
+It defines the variables (attributes) and functions (methods) that the objects will use.
+Without a class, we cannot create an object.
+
+For example, a Car class may contain brand, speed, and color attributes and methods like start() and 
+accelerate().
+
+Characteristics:
+Encapsulation: A class bundles variables and functions.
+Modular Design: A class provides a structured way to build programs.
+Abstraction: It hides implementation details from the user.
+Reusability: A single class can create multiple objects.
+Memory Management: The class itself doesn’t occupy memory until an object is instantiated.
+Use:
+Classes are essential in Object-Oriented Programming because they create structured, scalable, and reusable 
+code.
+
+For example, in an e-commerce website, a Product class can define price, name, and stock, which different
+products (objects) can use. In game development, a Player class can store attributes like health, level, and 
+skills.
+
+By defining a class, we create a template that allows multiple objects to follow the same structure but
+hold unique values.
+
+
+Example 1: Class for Book
+
+class Book {
+public:
+    string title;
+    string author;
+    int pages;
+};
+Example 2: Class for Employee
+
+class Employee {
+public:
+    string name;
+    double salary;
+};
+Example 3: Class for Rectangle
+
+class Rectangle {
+public:
+    double length;
+    double width;
+};
+
+3. Function
+Definition:
+A function is a reusable block of code that performs a specific task. Functions take input (parameters),
+process data, and return output.
+
+For example, a function calculateSum(int a, int b) may add two numbers and return the sum.
+
+Characteristics:
+Encapsulation: Functions group logic in a single place.
+Reusability: The same function can be used multiple times.
+Modularity: Functions break code into smaller, manageable parts.
+Parameters and Return Values: Functions take arguments and return results.
+Reduces Code Redundancy: Instead of writing the same logic multiple times, functions help avoid repetition.
+Use:
+Functions improve efficiency, readability, and debugging.
+
+For example, in banking software, a function withdrawAmount() can handle all withdrawal operations
+instead of writing the logic in multiple places.
+
+In a scientific calculator, functions like sin(x), cos(x), and log(x) process mathematical operations separately.
+
+By using functions, programs become easier to modify, debug, and maintain.
+
+Example 1: Function to Add Two Numbers
+
+int add(int a, int b) {
+    return a + b;
+}
+Example 2: Function to Find Maximum
+
+int max(int a, int b) {
+    return (a > b) ? a : b;
+}
+Example 3: Function to Display a Message
+
+void greet() {
+    cout << "Hello, welcome to C++ programming!";
+}
+
+4. Member Function
+Definition:
+A member function is a function inside a class that manipulates its attributes. 
+These functions are used to perform operations specific to the class.
+
+For example, a Car class might have a member function startEngine() to turn on the car.
+
+Characteristics:
+Encapsulation: Member functions operate only on the class’s data.
+Access Control: Functions can be public, private, or protected.
+Interaction with Data Members: They directly access and modify the class attributes.
+Modularity: Each function performs a specific task within the class.
+Polymorphism: Different classes can have functions with the same name but different behaviors.
+Use:
+Member functions help in modifying, displaying, and processing object data.
+
+For example, in a Student Management System, a class Student may have functions like setMarks() and getGrade().
+
+Similarly, in an ATM System, an Account class may have functions like deposit() and withdraw().
+
+Thus, member functions define the behavior of objects.
+
+Example 1: Student Class with Member Function
+
+class Student {
+public:
+    string name;
+    void showName() {
+        cout << "Student Name: " << name << endl;
+    }
+};
+
+Example 2: Car Class with Speed Control
+
+class Car {
+public:
+    int speed;
+    void setSpeed(int s) {
+        speed = s;
+    }
+    void showSpeed() {
+        cout << "Speed: " << speed << " km/h" << endl;
+    }
+};
+
+Example 3: Bank Account Class with Deposit Function
+
+class BankAccount {
+public:
+    double balance;
+    void deposit(double amount) {
+        balance += amount;
+    }
+};
+
+5. Constructor
+Definition:
+A constructor is a special function called automatically when an object is created. Its job is to initialize 
+object attributes.
+
+For example, in a Car class, a constructor may set brand and speed when the object is created.
+
+Characteristics:
+Same Name as Class: The constructor name matches the class name.
+No Return Type: It does not return any value.
+Automatic Execution: It is called when an object is created.
+Types:
+Default Constructor: No parameters.
+Parameterized Constructor: Takes arguments.
+Copy Constructor: Copies data from another object.
+Use:
+Constructors ensure objects start in a valid state.
+
+For example, in a game application, a Player constructor can set health = 100 and level = 1 when a new player 
+joins.
+
+In an e-commerce website, a Product constructor can set price, name, and category when a product is added.
+
+Constructors make programming efficient and error-free.
+
+Example 1: Default Constructor
+
+class Car {
+public:
+    Car() {
+        cout << "A car object is created!" << endl;
+    }
+};
+
+Example 2: Parameterized Constructor
+
+class Car {
+public:
+    string brand;
+    Car(string b) {
+        brand = b;
+    }
+};
+
+Example 3: Constructor to Set Initial Balance
+
+class BankAccount {
+public:
+    double balance;
+    BankAccount(double b) {
+        balance = b;
+    }
+};
+
+
+6. Destructor
+Definition:
+A destructor is a special function that is automatically called when an object goes out of scope. 
+It cleans up memory or resources before the object is destroyed.
+
+For example, in a File class, a destructor can close an open file when the object is no longer needed.
+
+Characteristics:
+Same Name as Class, Prefixed with ~.
+No Parameters and No Return Type.
+Automatically Invoked When an Object Goes Out of Scope.
+Frees Allocated Resources to Prevent Memory Leaks.
+Use:
+Destructors free up memory and prevent resource leaks.
+
+For example, in dynamic memory allocation, an object might allocate memory using new. 
+If we don’t delete it manually, a destructor automatically releases the memory.
+
+In a database system, a destructor can close database connections when an object is destroyed.
+Without destructors, memory leaks can slow down programs and crash systems.
+
+Example 1: Destructor to Release Memory
+
+class Test {
+public:
+    ~Test() {
+        cout << "Object destroyed!\n";
+    }
+};
+
+Example 2: Destructor for File Closing
+
+class File {
+public:
+    ~File() {
+        cout << "File closed!\n";
+    }
+};
+Example 3: Destructor to Notify Object Deletion
+
+class Car {
+public:
+    ~Car() {
+        cout << "Car object is being deleted!\n";
+    }
+};
